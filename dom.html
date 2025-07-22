@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Dom Fun</title>
+    <style>
+        body{
+            background: linear-gradient(90deg, rgb(239, 22, 105), #ffb656);
+            color: rgb(59, 4, 17);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .highlight {
+            background-color: bisque;
+            font-weight: bolder;
+            color: rgb(253, 4, 4);
+            max-width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        li{
+            font-weight: bold;
+            list-style-type: none;
+        }
+
+    </style>
+<script defer src="./script.js"></script>
+</head>
+<body>
+    <h1>Shio Cafe Tryouts</h1>
+    
+    <!-- Ex: Access the DOM elements-->
+    <section id="Ex1">
+         <h2> Cafe Theme Ideation </h2>
+         <p id="myPara">
+            What could it be? <br>
+        </p>
+        <button id="Clicker"> Hey! Click me! </button>
+    </section>
+
+    <!-- Ex2: Traverse the DOM -->
+     <section id="Ex2">
+        <h2> Hmm lets move onto food specialities... </h2>
+        <ul id="foodList">
+            <li>Truffle Mushroom Pizza</li>
+            <li>Mixed Sushi Boat</li>
+            <li>Fried Chicken</li>
+            <li>Strawberry Shortcake</li>
+            <li>Taro Boba Tea</li>
+        </ul>
+        <button id="Clicker2">
+             Highlight dessert!
+        </button>
+     </section>
+
+     <!--Ex3: Manipulating DOM -->
+     <section id="Ex3">
+        <h2>Choosing Cat Type</h2>
+        <div id="catDemand"> Cat: 
+            <span id="catType"> Siamese </span>
+        </div>
+        <button id="Clicker3"> Change cat? </button>
+     </section>
+
+     <!-- Ex4: Create and Insert -->
+      <section id="ex4">
+        <h2>Suggest activities we can add to Cafe? </h2>
+        <input type="text" id="activityInput" placeholder="Enter activity">
+        <button id="Clicker4"> Add Activity! </button>
+        <ul id="actList">
+            <li>Karaoke booth</li>
+            <li>Cat Playground</li>
+            <li>Reading nook</li>
+        </ul>
+      </section>
+
+       <!-- Example 7: Event Delegation -->
+    <section id="example-7">
+      <h2>Event Delegation</h2>
+      <ul id="teaList">
+        <li class="teaItem">Green Tea</li>
+        <li class="teaItem">Black Tea</li>
+        <li class="teaItem">Oolong Tea</li>
+      </ul>
+      <p>Click on any tea to select it!</p>
+    </section>
+
+    <!-- Example 8: Form Handling -->
+    <section id="example-8">
+      <h2>Form Handling</h2>
+      <form id="feedbackForm">
+        <label for="feedbackInput">Your Feedback:</label>
+        <input type="text" id="feedbackInput" placeholder="Enter feedback" />
+        <button type="submit">Submit Feedback</button>
+      </form>
+      <p id="feedbackDisplay"></p>
+    </section>
+
+    <!-- Example 9: DOM Content Loaded -->
+    <section id="example-9">
+      <h2>DOM Content Loaded</h2>
+      <p id="domStatus">Waiting for DOM to load...</p>
+    </section>
+
+    <!-- Example 10: CSS Classes Manipulation -->
+    <section id="example-10">
+      <h2>CSS Classes Manipulation</h2>
+      <p id="descriptionText">This text will change color!</p>
+      <button id="toggleHighlight">Toggle Highlight</button>
+    </section>
+  </body>
+</html>
+
+
+</body>
+</html>
