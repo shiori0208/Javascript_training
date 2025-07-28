@@ -1,32 +1,62 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const city_input = document.getElementById("city-input");
-    const getWeatherBtn = document.getElementById("get-weather-btn");
-    const weatherInfo = document.getElementById("weather-info");
-    const cityNameDisplay = document.getElementById("city-name");
-    const tempDisplay = document.getElementById("temperature");
-    const descDisplay = document.getElementById("description");
-    const errorMessage = document.getElementById("error-message"); 
+//method fetch has function json that converts data to string without parse 
 
-    const API_KEY = "b562d08adfdfc4a84eb9c50aa1f5eb48"; 
+document.addEventListener("DOMContentLoaded", () => {
+  const cityInput = document.getElementById("city-input");
+  const getWeatherBtn = document.getElementById("get-weather-btn");
+  const weatherInfo = document.getElementById("weather-info");
+  const cityNameDisplay = document.getElementById("city-name");
+  const countryNameDisplay = document.getElementById("country-name"); 
+  const temperatureDisplay = document.getElementById("temperature");
+  const descriptionDisplay = document.getElementById("description");
+  const errorMessage = document.getElementById("error-messag");
 
+  const API_KEY = "b562d08adfdfc4a84eb9c50aa1f5eb48"; //env variables
 
-    getWeatherBtn.addEventListener('click', () => {
-        const city = city_input.value.trim();
-        if(!city) return; 
+  getWeatherBtn.addEventListener("click", async () => {
+    const city = cityInput.value.trim();
+    if (!city) return;
 
-    }); 
+    // it may throw an error
+    // server/database is always in another continent
 
-    function fetchWeatherData(city) {
-        //gets data
+    try {
+      const weatherData = await fetchWeatherData(city);
+      displayWeatherData(weatherData);
+    } catch (error) {
+      showError();
     }
+  });
 
-    function displayWeatherData(weatherData) {
-        //display
+  async function fetchWeatherData(city) {
+    //gets the data
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+
+    const response = await fetch(url);
+    console.log(typeof response);
+    console.log("RESPONSE", response);
+
+    if (!response.ok) {
+      throw new Error("City Not found!");
     }
+    const data = await response.json();
+    return data;
+  }
 
-    function showError() {
-        weatherInfo.classList.add('hidden');
-        errorMessage.classList.remove('hidden'); 
-    }
+  function displayWeatherData(data) {
+    console.log(data);
+    const { name, main, weather, sys} = data;
+    cityNameDisplay.textContent = name;
+    countryNameDisplay.textContent = `${sys.country}`; 
+    temperatureDisplay.textContent = `Temperature : ${main.temp}`;
+    descriptionDisplay.textContent = `Weather : ${weather[0].description}`;
 
-}); 
+    //unlock the display
+    weatherInfo.classList.remove("hidden");
+    errorMessage.classList.add("hidden");
+  }
+
+  function showError() {
+    weatherInfo.classList.remove("hidden");
+    errorMessage.classList.add("hidden");
+  }
+});
