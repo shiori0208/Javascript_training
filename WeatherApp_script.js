@@ -7,13 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const descDisplay = document.getElementById("description");
     const errorMessage = document.getElementById("error-message"); 
 
+    const API_KEY = "b562d08adfdfc4a84eb9c50aa1f5eb48"; 
+
+
     getWeatherBtn.addEventListener('click', () => {
         const city = city_input.value.trim();
         if(!city) return; 
 
-       
+    }); 
 
+    function fetchWeatherData(city) {
+        //gets data
+    }
 
-    })
+    function displayWeatherData(weatherData) {
+        //display
+    }
+
+    function showError() {
+        weatherInfo.classList.add('hidden');
+        errorMessage.classList.remove('hidden'); 
+    }
 
 }); 
