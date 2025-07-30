@@ -7,8 +7,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #ffffff;
+  background-color: #BCB4FF;
+  color: #f6a946;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@ body {
 .container {
   width: 400px;
   padding: 20px;
-  background-color: #1e1e1e;
+  background-color: #343247;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -30,10 +30,11 @@ h2 {
 
 #product-list {
   margin-bottom: 30px;
+  color: #0c0808;
 }
 
 .product {
-  background-color: #333333;
+  background-color: #fffeecd6;
   padding: 10px;
   margin-bottom: 10px;
   display: flex;
@@ -43,17 +44,17 @@ h2 {
 }
 
 .product button {
-  background-color: #6200ea;
+  background-color: #c4f44a;
   border: none;
   padding: 5px 10px;
-  color: #fff;
+  color: #0c0808;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .product button:hover {
-  background-color: #3700b3;
+  background-color: #85e491;
 }
 
 #cart-items {
@@ -65,7 +66,7 @@ h2 {
 }
 
 #checkout-btn {
-  background-color: #6200ea;
+  background-color: #FFBE98;
   border: none;
   padding: 10px;
   color: white;
@@ -75,7 +76,7 @@ h2 {
 }
 
 #checkout-btn:hover {
-  background-color: #3700b3;
+  background-color: #e78e5b;
 }
 
 .hidden {
