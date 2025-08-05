@@ -43,12 +43,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if(cart.length) {
             emptyCartMessage.classList.add("hidden"); 
             cartTotalMessage.classList.remove("hidden"); 
+            cart.forEach((item, index) => {
+                totalPrice += item.price; 
+                const cartItem = document.createElement('div');
+                cartItem.innerHTML = `
+                ${item.name} -> $${item.price.toFixed(2)}`;
+                cartItems.appendChild(cartItem); 
+                totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`; 
+            } )
 
         }
         else {
             emptyCartMessage.classList.remove("hidden"); 
+            totalPriceDisplay.textContent = `$0.00`; 
         }
     }
+
+    checkOutBtn.addEventListener('click', () => {
+        cart.length = 0;
+        alert("Checked Out successfully");
+        renderCart(); 
+    })
 
 
 
