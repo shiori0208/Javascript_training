@@ -5,15 +5,43 @@
   box-sizing: border-box;
 }
 
+
+
 body {
+  position: relative;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: #BCB4FF;
+  background-color: #696783;
   color: #f6a946;
+  /* Remove background-image from here */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden; /* Prevent scrollbars from overlay */
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('cart.jpg');
+  background-repeat: repeat;
+  background-size: 190px;
+  opacity: 0.5; /* Adjust for desired transparency */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Make sure your main content is above the overlay */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 
 .container {
   width: 400px;
