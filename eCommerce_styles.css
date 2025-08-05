@@ -66,17 +66,18 @@ h2 {
 }
 
 #checkout-btn {
-  background-color: #FFBE98;
+  background-color: #ee8040;
   border: none;
   padding: 10px;
-  color: white;
+  color: rgb(18, 4, 4);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 #checkout-btn:hover {
-  background-color: #e78e5b;
+  background-color: #ca5715;
+  color: antiquewhite;
 }
 
 .hidden {
